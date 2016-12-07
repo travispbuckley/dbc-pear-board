@@ -1,0 +1,17 @@
+<div id="register-form-container">
+  <%= form_for @user do |f| %>
+    <%= f.label(:full_name, "Full Name") %>
+    <%= f.text_field :full_name %>
+    <%= f.label(:email, "Email") %>
+    <%= f.email_field :email %>
+    <%= f.label(:picture_link, "Picture Link") %>
+    <%= f.email_field :picture_link %>  
+    <%= f.label(:phone_number, "Phone Number") %>
+    <%= f.email_field :phone_number %>      
+    <%= f.label(:password, "Password") %>
+    <%= f.password_field :password %>
+    <%= f.label(:password_confirmation, "Password Confirmation") %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "Register" %>
+  <% end %>
+</div>
