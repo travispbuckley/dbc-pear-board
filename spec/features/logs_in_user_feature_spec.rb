@@ -1,24 +1,21 @@
 require 'rails_helper'
 
 feature 'user visits login page' do
-  scenario 'user visits login form page' do
-    visit '/'
-
-    click_link("log in")
-
-
-    expect(page).to have_current_path login_path
-  end
 
   scenario "user logs in" do
     User.create(full_name:"username_test", email: "username_test@gmail.com", phone_number: "123-456-7890", password: "12345")
 
-    visit login_path
+    visit "/"
 
-    within("#login-form-container") do
+    within("#index_page_links_div") do 
+      find("#login_link").click
+    end
+    
+
+    within("#login_form") do
       fill_in "email", with: "username_test@gmail.com"
       fill_in "password", with: "12345"
-      click_button("Login!")
+      click_button("log in")
     end
 
     expect(page).to have_current_path root_path
@@ -28,12 +25,17 @@ feature 'user visits login page' do
   scenario "user logs out" do
     User.create(full_name:"username_test", email: "username_test@gmail.com", phone_number: "123-456-7890", password: "12345")
 
-    visit login_path
+    visit "/"
 
-    within("#login-form-container") do
+    within("#index_page_links_div") do 
+      find("#login_link").click
+    end
+    
+
+    within("#login_form") do
       fill_in "email", with: "username_test@gmail.com"
       fill_in "password", with: "12345"
-      click_button("Login!")
+      click_button("log in")
     end
 
     click_link("log out")
