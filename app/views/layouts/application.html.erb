@@ -5,10 +5,16 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="main_div">
+      <div id="header_div">
+        <h1>pear board</h1>
+      </div>
+        <%= yield %>
+    </div>
   </body>
 </html>
