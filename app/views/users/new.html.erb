@@ -1,7 +1,7 @@
 <h1>Register Here!</h1>
 
 <% if @user.errors.any? %>
-  <ul>
+  <ul id="errors">
   <% @user.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
   <% end %>
