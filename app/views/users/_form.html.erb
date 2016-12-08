@@ -3,8 +3,8 @@
   <%= f.text_field :full_name %></p>
   <p><%= f.label(:email, "email") %>
   <%= f.email_field :email %></p>
-  <p><%= f.label(:picture_link, "picture link") %>
-  <%= f.url_field :picture_link %></p>
+  <p><%= f.label :avatar, "profile pic" %>
+  <%= f.file_field :avatar %></p>
   <p><%= f.label(:phone_number, "phone number") %>
   <%= f.telephone_field :phone_number %></p>
   <p><%= f.label(:password, "password") %>
