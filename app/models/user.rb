@@ -7,6 +7,9 @@ class User < ApplicationRecord
 	has_many :student_slots, through: :student_sessions, source: :slot
 	has_many :mentor_slots, through: :mentor_sessions, source: :slot
 
+	validates :full_name, :email, :password_digest, :phone_number, { presence: true }
+	validates :email, { uniqueness: true }
+
 	has_secure_password
 
 end
