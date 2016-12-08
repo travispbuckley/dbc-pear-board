@@ -7,12 +7,6 @@
 </div>	
 	<br><br><br>
 
-<div id="contact-info">
-	<h3>Contact Info:</h3>
-	<ul>
-		<li>Name: <%= @user.full_name %></li>
-		<li>Email: <%= @user.email %></li>
-		<li>Phone Number: <%= @user.phone_number %></li>
-	</ul>	
+<%= render "contact" %>
 
-</div>
+<%= render "sessions_display" %>

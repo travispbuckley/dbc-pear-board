@@ -1,0 +1,33 @@
+<div id="sessions-box">
+	<% if current_user.id == @user.id %>
+		<h3>Your Sessions:</h3>
+	<% else %>
+		<h3>Sessions:</h3>
+	<% end %>
+
+	<% @user.mentor_sessions.each do |sesh| %>
+	<ul>
+		<li>
+			Student: <%= sesh.student.full_name %>
+			Time: <%= sesh.session_datetime %>
+		</li>
+	</ul>
+	<% end %>
+</div>
+
+<div id="learnings-box">
+	<% if current_user.id == @user.id %>
+		<h3>Your Learnings:</h3>
+	<% else %>
+		<h3>Learnings:</h3>
+	<% end %>
+
+	<% @user.student_sessions.each do |sesh| %>
+	<ul>
+		<li>
+			Mentor: <%= sesh.mentor.full_name %><br>
+			Time: <%= sesh.session_datetime %>
+		</li>
+	</ul>
+	<% end %>
+</div>
