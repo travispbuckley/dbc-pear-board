@@ -1,0 +1,5 @@
+<% if current_user.id == @user.id %>
+	<h3>Welcome, <%= @user.full_name %>!</h3>
+<% else %>
+	<h3><%= @user.full_name %></h3>
+<% end %>
