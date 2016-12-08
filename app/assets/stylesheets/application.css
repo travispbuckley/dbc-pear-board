@@ -28,13 +28,18 @@ body {
   text-align: right;
 }
 
-#index_page_links {
-  padding: 0 0 0 32px;
+#index_page_links_div {
+  padding: 0 0 0 18px;
 }
 
 #header_div {
   padding: 0 0 0 5px;
 }
+
+.index_page_link {
+  padding: 7px;
+}
+
 
 a {
   text-decoration: none;
@@ -50,9 +55,13 @@ a:visited {
 
 
 a:hover {
-    color: #5272D5;
+    color: #FF4600;
 }
 
 
 a:active {
     color: #5272D5;
+
+a:focus {
+  background-color: black;
+}
