@@ -75,3 +75,7 @@ a:hover {
 a:active {
     color: #5272D5;
 }
+
+p {
+  margin :0px;
+}
