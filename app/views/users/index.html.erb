@@ -21,7 +21,9 @@
 
 <% if @errors %>
   <div id="errors_div">
-      <p><%= @errors %></p>
+    <% @errors.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
   </div>
 <% end %>
 

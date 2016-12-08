@@ -21,7 +21,8 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = "Error!"
-      render :new
+      @errors = @user.errors.full_messages
+      render "index"
     end
 	end
 

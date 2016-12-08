@@ -7,16 +7,4 @@ feature "visits the index page" do
     expect(find_link('pear board', :visible => :all).visible?).to be true
   end
 
-  scenario "the user sees a register link" do
-    visit "/"
-
-    expect(find_link('register', :visible => :all).visible?).to be true
-  end
-
-  scenario "the user sees a login link" do
-    visit "/"
-
-    expect(find_link('log in', :visible => :all).visible?).to be true
-  end
-
 end
