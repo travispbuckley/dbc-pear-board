@@ -3,12 +3,28 @@
     <%= link_to(current_user.full_name, user_path(current_user.id), {:class => "index_page_link", :id => "profile_link"}) %>
     <%= link_to("log out", logout_path, { method: "delete", :class => "index_page_link" }) %>
   <% else %>
-    <%= link_to("register", register_path, {:class => "index_page_link"}) %>
-    <%= link_to("log in", login_path, {:class => "index_page_link"}) %>
-
+    <p id="register_link" class="index_page_link">register</p>
+    <p id="login_link" class="index_page_link">log in</p>
   <% end %>
 </div>
 
-<div id="pear">
-  <%= image_tag("pear.png") %>
+
+<div id="content">
+  <div id ="index_page_forms_div">
+    <%= render "sessions/login_form" %>
+    <%= render "users/form" %>
+  </div>
+  <div id="pear_div">
+    <%= image_tag("pear.png", {:id => "pear_pic"}) %>
+  </div>
 </div>
+
+<% if @errors %>
+  <div id="errors_div">
+    <% @errors.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  </div>
+<% end %>
+
+

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @user = User.new
   end
 
 	def show
@@ -16,10 +17,6 @@ class UsersController < ApplicationController
     end
 	end
 
-	def new
-		@user = User.new
-	end
-
 	def create
     @user = User.new(user_params)
     if @user.save
@@ -28,7 +25,8 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = "Error!"
-      render :new
+      @errors = @user.errors.full_messages
+      render "index"
     end
 	end
 

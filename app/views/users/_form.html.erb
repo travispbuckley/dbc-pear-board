@@ -1,17 +1,15 @@
-<div id="register-form-container">
-  <%= form_for @user do |f| %>
-    <%= f.label(:full_name, "Full Name") %>
-    <%= f.text_field :full_name %>
-    <%= f.label(:email, "Email") %>
-    <%= f.email_field :email %>
-    <%= f.label(:picture_link, "Picture Link") %>
-    <%= f.url_field :picture_link %>
-    <%= f.label(:phone_number, "Phone Number") %>
-    <%= f.telephone_field :phone_number %>
-    <%= f.label(:password, "Password") %>
-    <%= f.password_field :password %>
-    <%= f.label(:password_confirmation, "Password Confirmation") %>
-    <%= f.password_field :password_confirmation %>
-    <%= f.submit "Register" %>
-  <% end %>
-</div>
+<%= form_for @user do |f| %>
+  <p><%= f.label(:full_name, "full name") %>
+  <%= f.text_field :full_name %></p>
+  <p><%= f.label(:email, "email") %>
+  <%= f.email_field :email %></p>
+  <p><%= f.label(:picture_link, "picture link") %>
+  <%= f.url_field :picture_link %></p>
+  <p><%= f.label(:phone_number, "phone number") %>
+  <%= f.telephone_field :phone_number %></p>
+  <p><%= f.label(:password, "password") %>
+  <%= f.password_field :password %></p>
+  <p><%= f.label(:password_confirmation, "confirmation") %>
+  <%= f.password_field :password_confirmation %></p>
+  <p><%= f.submit "register" %></p>
+<% end %>
