@@ -1,6 +1,12 @@
 <div id="index_page_links_div">
-  <%= link_to("register", register_path, {:class => "index_page_link"}) %>
-  <%= link_to("log in", login_path, {:class => "index_page_link"}) %>
+  <% if logged_in? %>
+    <%= link_to(current_user.full_name, user_path(current_user.id), {:class => "index_page_link"}) %>
+    <%= link_to("log out", logout_path, { method: "delete", :class => "index_page_link" }) %>
+  <% else %>
+    <%= link_to("register", register_path, {:class => "index_page_link"}) %>
+    <%= link_to("log in", login_path, {:class => "index_page_link"}) %>
+
+  <% end %>
 </div>
 
 <div id="pear">
