@@ -4,9 +4,13 @@ class UsersController < ApplicationController
   end
 
 	def show
-    if User.exists?(params[:id])
-		  @user = User.find(params[:id])
-      render "show"
+    if logged_in?
+      if User.exists?(params[:id])
+  		  @user = User.find(params[:id])
+        render "show"
+      else
+        redirect_to root_path
+      end
     else
       redirect_to root_path
     end
