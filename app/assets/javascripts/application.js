@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  $("#register_link").on("click", function() {
+    $("#login_form").hide();
+    $("#new_user").fadeToggle();
+  });
+
+  $("#login_link").on("click", function() {
+    $("#new_user").hide();
+    $("#login_form").fadeToggle();
+  });
+})
