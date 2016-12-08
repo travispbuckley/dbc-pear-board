@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @user = User.new
   end
 
 	def show
@@ -10,10 +11,6 @@ class UsersController < ApplicationController
     else
       redirect_to root_path
     end
-	end
-
-	def new
-		@user = User.new
 	end
 
 	def create

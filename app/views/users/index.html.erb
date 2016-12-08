@@ -3,9 +3,17 @@
     <%= link_to(current_user.full_name, user_path(current_user.id), {:class => "index_page_link", :id => "profile_link"}) %>
     <%= link_to("log out", logout_path, { method: "delete", :class => "index_page_link" }) %>
   <% else %>
-    <%= link_to("register", register_path, {:class => "index_page_link"}) %>
-    <%= link_to("log in", login_path, {:class => "index_page_link"}) %>
+    <p id="register_link" class="index_page_link">register</p>
+    <p id="login_link" class="index_page_link">log in</p>
 
+    <%= render "sessions/login_form" %>
+    <%= render "users/form" %>
+
+    <% if @errors %>
+  <ul>
+    <li><%= @errors %></li>
+<% end %>
+  </ul>
   <% end %>
 </div>
 

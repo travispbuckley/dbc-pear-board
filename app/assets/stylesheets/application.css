@@ -33,11 +33,24 @@ body {
 }
 
 #header_div {
+  margin: 0px;
   padding: 0 0 0 5px;
 }
 
 .index_page_link {
+  display: inline-block;
+  color: #5272D5;
+  margin: 0px;
   padding: 7px;
+}
+
+.index_page_link:hover {
+  color: #FF4600;
+  cursor: pointer;
+}
+
+.index_page_link:active {
+    color: #5272D5;
 }
 
 
@@ -61,8 +74,4 @@ a:hover {
 
 a:active {
     color: #5272D5;
-}
-
-a:focus {
-  background-color: black;
 }
