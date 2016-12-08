@@ -5,6 +5,11 @@
 		<h2><%= @user.full_name %></h2>
 	<% end %>
 </div>	
+
+<div class="profile-pic">
+	<img src= "<%= @user.picture_link %>" >
+</div>
+
 	<br><br><br>
 
 <%= render "contact" %>
