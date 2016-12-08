@@ -16,6 +16,7 @@
 
 body {
   background-color: #B5B5B5;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #main_div {
@@ -38,3 +39,20 @@ body {
 a {
   text-decoration: none;
 }
+
+a:link {
+    color: #5272D5;
+}
+
+a:visited {
+    color: #5272D5;
+}
+
+
+a:hover {
+    color: #5272D5;
+}
+
+
+a:active {
+    color: #5272D5;
