@@ -1,5 +1,18 @@
-<% if current_user.id == @user.id %>
-	<h3>Welcome, <%= @user.full_name %>!</h3>
-<% else %>
-	<h3><%= @user.full_name %></h3>
-<% end %>
+<div>	
+	<% if current_user.id == @user.id %>
+		<h2>Welcome, <%= @user.full_name %>!</h2>
+	<% else %>
+		<h2><%= @user.full_name %></h2>
+	<% end %>
+</div>	
+	<br><br><br>
+
+<div id="contact-info">
+	<h3>Contact Info:</h3>
+	<ul>
+		<li>Name: <%= @user.full_name %></li>
+		<li>Email: <%= @user.email %></li>
+		<li>Phone Number: <%= @user.phone_number %></li>
+	</ul>	
+
+</div>
