@@ -1,0 +1,17 @@
+<div>	
+	<% if current_user.id == @user.id %>
+		<h2>Welcome, <%= @user.full_name %>!</h2>
+	<% else %>
+		<h2><%= @user.full_name %></h2>
+	<% end %>
+</div>	
+
+<div class="profile-pic">
+	<img src= "<%= @user.picture_link %>" >
+</div>
+
+	<br><br><br>
+
+<%= render "contact" %>
+
+<%= render "sessions_display" %>

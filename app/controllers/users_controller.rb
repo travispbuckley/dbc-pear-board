@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   end
 
 	def show
-		@user = current_user
+    if User.exists?(params[:id])
+		  @user = User.find(params[:id])
+      render "show"
+    else
+      redirect_to root_path
+    end
 	end
 
 	def new
