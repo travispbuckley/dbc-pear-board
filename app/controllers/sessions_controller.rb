@@ -7,8 +7,9 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = "Invalid Email/Password"
-      @errors = "Invalid Username/Passwords"
-      render "new"
+      @errors = ["Invalid Username/Passwords"]
+      @user = User.new
+      render "users/index"
     end		
 
 	end
