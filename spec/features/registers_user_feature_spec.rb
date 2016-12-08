@@ -38,7 +38,6 @@ feature "registers a new user" do
       fill_in "user_password_confirmation", with: ""
       click_button("Register")
     end
-
     
     expect(page.find_by_id('errors')).to have_content()
   end
