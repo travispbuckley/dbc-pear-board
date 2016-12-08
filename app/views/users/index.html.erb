@@ -5,18 +5,24 @@
   <% else %>
     <p id="register_link" class="index_page_link">register</p>
     <p id="login_link" class="index_page_link">log in</p>
-
-    <%= render "sessions/login_form" %>
-    <%= render "users/form" %>
-
-    <% if @errors %>
-  <ul>
-    <li><%= @errors %></li>
-<% end %>
-  </ul>
   <% end %>
 </div>
 
-<div id="pear">
-  <%= image_tag("pear.png") %>
+
+<div id="content">
+  <div id ="index_page_forms_div">
+    <%= render "sessions/login_form" %>
+    <%= render "users/form" %>
+  </div>
+  <div id="pear_div">
+    <%= image_tag("pear.png", {:id => "pear_pic"}) %>
+  </div>
 </div>
+
+<% if @errors %>
+  <div id="errors_div">
+      <p><%= @errors %></p>
+  </div>
+<% end %>
+
+

@@ -17,6 +17,7 @@
 body {
   background-color: #B5B5B5;
   font-family: 'Montserrat', sans-serif;
+  min-width: 635px;
 }
 
 #main_div {
@@ -24,11 +25,25 @@ body {
   border-right: 55px solid #FF4600;
 }
 
-#pear {
-  text-align: right;
+#index_page_forms_div {
+  vertical-align: top;
+  display: inline-block;
+  padding: 20px 0 0 26px;
+}
+
+#content {
+  position: relative;
+  padding: 0 0 100px 0;
+}
+
+#pear_div {
+  display: inline-block;
+  float: right;
 }
 
 #index_page_links_div {
+  display: inline-block;
+  vertical-align: top;
   padding: 0 0 0 18px;
 }
 
@@ -40,6 +55,7 @@ body {
 .index_page_link {
   display: inline-block;
   color: #5272D5;
+  vertical-align: top;
   margin: 0px;
   padding: 7px;
 }
@@ -79,3 +95,5 @@ a:active {
 p {
   margin :0px;
 }
+
+
