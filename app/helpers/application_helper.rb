@@ -13,9 +13,9 @@ module ApplicationHelper
       if sessions[user].any? { |session| session.slot_id == slot.id }
         booked_session = sessions[user].find { |session| session.slot_id == slot.id }
         if booked_session.student 
-          booked_session.student.full_name
+          booked_session.student
         else
-          "empty"
+          Session.find_by(mentor_id: user.id, slot_id: slot.id)
         end
       else
         "x"
