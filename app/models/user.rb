@@ -21,7 +21,32 @@ class User < ApplicationRecord
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  def self.mentor_slots(day)
+    all_possible_mentors = User.select {|ment| ment.mentor_sessions.length > 0 }
+    mentor_session_hash = {}
+    days_sessions = Session.slots(day)
+    all_possible_mentors.each do |user|
+      user_days_sessions = days_sessions.where(mentor_id: user.id)
+      if user_days_sessions.length > 0
+        mentor_session_hash[user] = user_days_sessions
+      end
+    end
+    mentor_session_hash
+  end
+
+
+  def active_sessions(all_sessions)
+    sessions = []
+    all_sessions.each do |sesh|
+      if sesh.session_datetime.to_datetime > DateTime.now
+        sessions << sesh
+      end
+    end
+    sessions
+  end
 end
+
+
 
 
 

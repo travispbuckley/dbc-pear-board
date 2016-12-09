@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Success!"
-      redirect_to root_path
+      redirect_to slots_path
     else
       flash[:alert] = "Error!"
       @errors = @user.errors.full_messages
