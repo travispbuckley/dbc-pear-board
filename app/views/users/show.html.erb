@@ -8,7 +8,7 @@
 
 <div class="profile-pic">
   <% if @user.avatar_file_name %>
-    <img src= "<%= @user.avatar.url %>" >
+    <%= image_tag @user.avatar.url(:square) %>
   <% else %>
 	  <img src= "<%= @user.picture_link %>" >
   <% end %>
