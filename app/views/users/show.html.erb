@@ -1,4 +1,4 @@
-<div>
+<div id="name-header">
 	<% if current_user.id == @user.id %>
 		<h2>Welcome, <%= @user.full_name %>!</h2>
 	<% else %>
@@ -6,15 +6,13 @@
 	<% end %>
 </div>
 
-<div class="profile-pic">
+<div id="profile-pic">
   <% if @user.avatar_file_name %>
     <%= image_tag @user.avatar.url(:square) %>
   <% else %>
 	  <img src= "<%= @user.picture_link %>" >
   <% end %>
 </div>
-
-	<br><br><br>
 
 <%= render "contact" %>
 
