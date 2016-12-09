@@ -8,7 +8,7 @@
 	<% @user.mentor_sessions.each do |sesh| %>
 	<ul>
 		<li>
-			Student: <%= sesh.student.full_name %>
+			Student: <%= sesh.student.try(:full_name) %>
 			Time: <%= sesh.session_datetime %>
 		</li>
 	</ul>

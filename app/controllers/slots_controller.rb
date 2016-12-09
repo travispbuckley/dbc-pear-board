@@ -20,9 +20,11 @@ class SlotsController < ApplicationController
     end
     accurate_day_time = day.change({hour: time.first.to_i, min: time.last.to_i })
     session = Session.new(mentor_id: current_user.id, slot_id: slot.id, session_datetime: accurate_day_time)
-    session.save
-    p session.errors
-    redirect_to '/slots'
+    if session.save
+      redirect_to '/slots'  
+    else
+      # need to add error handling and validate for session already taken
+    end
   end
 
 end
