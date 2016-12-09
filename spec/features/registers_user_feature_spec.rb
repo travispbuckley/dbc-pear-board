@@ -19,7 +19,7 @@ feature "registers a new user" do
       click_button("register")
     end
 
-    expect(page).to have_current_path root_path
+    expect(page).to have_current_path slots_path
     expect(page.find_by_id('profile_link')).to have_content("username_test")
   end
 
