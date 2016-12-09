@@ -9,7 +9,16 @@
     <tr>
       <td><%= mentor.full_name %></td>
     <% @slots_sat.each do |slot_check| %>
-      <td><%= slot_checker(@sat_sessions, mentor, slot_check) %></td>
+      <% value = slot_checker(@sat_sessions, mentor, slot_check) %>
+      <% if value.class == Session %>
+        <td><%= form_tag("/slots/#{value.id}", method: "PATCH") do %>
+          <%= submit_tag("sign up")%>
+          <% end %></td>
+      <% elsif value == "x" %>
+        <td><%= value %></td>
+      <% else %>
+        <td><%= link_to value.full_name, value %></td>
+      <% end %>
     <% end %>
     </tr>
   <% end %> 

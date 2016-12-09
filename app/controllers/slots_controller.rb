@@ -27,4 +27,10 @@ class SlotsController < ApplicationController
     end
   end
 
+  def update
+    @session = Session.find(params[:id])
+    @session.update_attributes(student_id: current_user.id)
+    redirect_to slots_path
+  end
+
 end
