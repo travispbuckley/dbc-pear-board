@@ -16,6 +16,7 @@
         <h1><%= link_to("pear board", root_path)%></h1>
         <% if logged_in? %>
           <%= link_to("log out", logout_path, { method: "delete", :class => "index_page_link", :id => "log_out_button" }) %>
+          <%= link_to(current_user.full_name, user_path(current_user.id), {:class => "index_page_link", :id => "profile_link"}) %>
         <% end %>
       </div>
         <%= yield %>

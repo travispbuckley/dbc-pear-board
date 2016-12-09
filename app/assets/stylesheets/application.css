@@ -59,7 +59,7 @@ h1 {
   margin: 0px;
 }
 
-#log_out_button {
+#log_out_button, #profile_link {
   float: right;
 }
 .index_page_link {
