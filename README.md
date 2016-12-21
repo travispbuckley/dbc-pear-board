@@ -10,6 +10,8 @@ This project will be an online version of the physical DBC Pair Board where a us
 - Rails 5
 - Postgresql
 - Javascript/Jquery/AJAX
+- AWS for photo storage
+- Paperclip GEM for user upload
 
 ## MVP
 
@@ -41,5 +43,6 @@ This project will be an online version of the physical DBC Pair Board where a us
 * Responsive for Mobile
 
 [Trello Link](https://trello.com/b/H2fabbsb/group-project)
+
 
 
