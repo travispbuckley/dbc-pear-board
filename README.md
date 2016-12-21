@@ -5,6 +5,12 @@
 ### Description
 This project will be an online version of the physical DBC Pair Board where a user can come to not only sign up as a mentor and post availability for mentor sessions, but also a claim a slot with a mentor as a mentee.
 
+### Built With
+
+- Rails 5
+- Postgresql
+- Javascript/Jquery/AJAX
+
 ## MVP
 
 * Users
